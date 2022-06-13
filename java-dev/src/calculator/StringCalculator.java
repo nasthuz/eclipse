@@ -1,11 +1,12 @@
 package calculator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class StringCalculator {
 		public int add(String numbers){
-		String[] nums = numbers.split(",");
+	    String[] nums = numbers.split(",|\r?\n|\r");
 		List<Integer> data = new ArrayList<Integer>();
 		convertArrayIntoInt(nums,data);
 		int result = calculateSum(data);
@@ -17,6 +18,7 @@ public class StringCalculator {
 	
 	private static void convertArrayIntoInt(String[] stringData, List<Integer> intData) {
 		for (String i: stringData) {
+			System.out.println("num = "  + i);
 			if(i != null && !i.trim().isEmpty()) {
 				intData.add(Integer.parseInt(i));
 			}else {
@@ -28,6 +30,7 @@ public class StringCalculator {
 	private static int calculateSum(List<Integer> data) {
 		int result = 0;
 		for (int i: data) {
+			System.out.println("+num = "  + i);
 			result += i;
 		}
 		return result;
