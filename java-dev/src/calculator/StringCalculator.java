@@ -9,6 +9,7 @@ public class StringCalculator {
 	    String[] nums = setSplit(numbers);
 		List<Integer> data = new ArrayList<Integer>();
 		convertArrayIntoInt(nums,data);
+		throwExceptionNegativesNotAllowed(data);
 		int result = calculateSum(data);
 		System.out.println("result = "  + result);
 		return result;
@@ -26,10 +27,22 @@ public class StringCalculator {
 			data=str.substring(indexLine+1, str.length()); 			
 			splitedNums = splitWithCustomDelimeter(data,delimeter);
 		}else {
-			System.out.println("The String is empty ");
+			splitedNums = str.split(";");
 		}
 		return splitedNums;
+	}
+	
+	private static void throwExceptionNegativesNotAllowed(List<Integer> data) {
+		List<Integer> negativeData = new ArrayList<Integer>();
+		for(Integer i: data) {
+			if(i < 0) {
+				negativeData.add(i);
+			}
 		}
+		if(negativeData.size() > 0) {
+			throw new RuntimeException(" Negatives not allowed: " + negativeData.toString());
+		}
+	}
 
 	
 	private String[] splitWithCustomDelimeter(String str,String delimeter) {
