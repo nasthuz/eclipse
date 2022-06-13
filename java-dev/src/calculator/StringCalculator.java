@@ -57,13 +57,23 @@ public class StringCalculator {
 	private static void convertArrayIntoInt(String[] stringData, List<Integer> intData) {
 		for (String i: stringData) {
 			if(i != null && !i.trim().isEmpty()) {
-				intData.add(Integer.parseInt(i));
+				checkIfBigNumber(i,intData);
 			}else {
 				intData.add(0);
 			}
 		}
 	}
 	
+	private static void checkIfBigNumber(String i, List<Integer> intData) {
+		if(Integer.parseInt(i)>1000) {
+			intData.add(0);
+		}else {
+			intData.add(Integer.parseInt(i));
+		}
+		
+	}
+
+
 	private static int calculateSum(List<Integer> data) {
 		int result = 0;
 		for (int i: data) {
