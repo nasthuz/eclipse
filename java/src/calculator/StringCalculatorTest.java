@@ -69,6 +69,11 @@ public class StringCalculatorTest {
 	}
 	
 
+//	Step 6 - Numbers bigger than 1000 should be ignored
+	@Test
+	public void shouldBigNumbersBeIgnored() {
+		assertEquals(13, StringCalculator.add("1001;6;7"));
+	}
 	
 }
 
