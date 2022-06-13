@@ -48,4 +48,27 @@ public class StringCalculatorTest {
 		assertEquals(14, StringCalculator.add("1;6;7"));
 	}
 	
+//	Step 5 - Exception “negatives not allowed” 
+	@Test
+	public void shouldSupporExceptionNoNegatives() {
+		try {
+			StringCalculator.add("-1;6;7");
+			fail("Exception fail");
+		}catch(RuntimeException re){} 
+	}
+	
+//	Step 5 - Exception “negatives not allowed” and output numbers
+	@Test
+	public void shouldSupporExceptionNoNegativesWithOutput() {
+		try {
+			StringCalculator.add("-1;-6;-7;8");
+			fail("Exception fail");
+		}catch(RuntimeException re){
+			assertEquals(" Negatives not allowed: [-1, -6, -7]", re.getMessage());
+		} 
+	}
+	
+
+	
 }
+
