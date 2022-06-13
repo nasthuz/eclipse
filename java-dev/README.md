@@ -35,4 +35,7 @@ Calling Add with a negative number will throw an exception ```“negatives not a
 
 If there are multiple negatives, show all of them in the exception message.
 
+### Step 6
+Numbers bigger than 1000 should be ignored, so adding 2 + 1001 = 2
+
 
