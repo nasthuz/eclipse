@@ -30,10 +30,22 @@ public class StringCalculatorTest {
 		assertEquals(10, StringCalculator.add("1,1,1,1,1,1,1,1,1,1"));
 	}
 	
-//	Step 3 - Allow the Add method to handle an unknown amount of numbers.
+//	Step 3 - Allow the Add method to handle new lines.
 	@Test
 	public void shouldHandleNewLines() {
 		assertEquals(6, StringCalculator.add("1\n2,3"));
+	}
+	
+//	Step 4 - Allow the Add method to handle an unknown amount of numbers.
+	@Test
+	public void shouldSupportCustomDelimiter() {
+		assertEquals(3, StringCalculator.add("//,\\n1,2"));
+	}
+	
+//	Step 4 - Allow the Add method to add values with default delimiter ';'
+	@Test
+	public void shouldSupportDefaultDelimiter() {
+		assertEquals(14, StringCalculator.add("1;6;7"));
 	}
 	
 }
