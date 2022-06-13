@@ -30,4 +30,10 @@ public class StringCalculatorTest {
 		assertEquals(10, StringCalculator.add("1,1,1,1,1,1,1,1,1,1"));
 	}
 	
+//	Step 3 - Allow the Add method to handle an unknown amount of numbers.
+	@Test
+	public void shouldHandleNewLines() {
+		assertEquals(6, StringCalculator.add("1\n2,3"));
+	}
+	
 }
