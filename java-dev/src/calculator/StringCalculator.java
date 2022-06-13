@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StringCalculator {
-		public int add( String numbers){
+		public int add(String numbers){
 		String[] nums = numbers.split(",");
 		List<Integer> data = new ArrayList<Integer>();
 		convertArrayIntoInt(nums,data);
@@ -19,7 +19,7 @@ public class StringCalculator {
 	
 	private static void convertArrayIntoInt(String[] stringData, List<Integer> intData) {
 		for (String i: stringData) {
-			if(i != null && !i.isEmpty()) {
+			if(i != null && !i.trim().isEmpty()) {
 				intData.add(Integer.parseInt(i));
 			}else {
 				intData.add(0);
