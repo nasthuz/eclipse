@@ -1,4 +1,4 @@
-# eclipse
+# Java Developer
 ###  Step 1
 Create a simple String calculator with a method signature:
 
