@@ -8,10 +8,8 @@ public class StringCalculator {
 		String[] nums = numbers.split(",");
 		List<Integer> data = new ArrayList<Integer>();
 		convertArrayIntoInt(nums,data);
+		int result = calculateSum(data);
 		
-		int firstNumber = data.get(0);
-		int secondNumber = data.get(1);
-		int result = firstNumber + secondNumber;
 		System.out.println("result = "  + result);
 		return result;
 	}
@@ -25,5 +23,13 @@ public class StringCalculator {
 				intData.add(0);
 			}
 		}
+	}
+	
+	private static int calculateSum(List<Integer> data) {
+		int result = 0;
+		for (int i: data) {
+			result += i;
+		}
+		return result;
 	}
 }
