@@ -1,4 +1,4 @@
-# Java Developer
+# String Calculator Kata
 
 ### Step 1
 
