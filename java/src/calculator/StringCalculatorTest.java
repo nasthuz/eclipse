@@ -24,4 +24,10 @@ public class StringCalculatorTest {
 		assertEquals(1, StringCalculator.add(",1"));
 	}
 	
+//	Step 2 - Allow the Add method to handle an unknown amount of numbers.
+	@Test
+	public void shouldHandleUnknownAmountOfNumbers() {
+		assertEquals(10, StringCalculator.add("1,1,1,1,1,1,1,1,1,1"));
+	}
+	
 }
